@@ -21,10 +21,13 @@
     
 #if !TARGET_OS_SIMULATOR
     RCT_EXPORT_METHOD(connect:(NSString*)ssid
+                      lifeTimeInDays:(nonnull NSNumber*)lifeTimeInDays
+                      joinOnce:(BOOL)joinOnce   
                       callback:(RCTResponseSenderBlock)callback) {
         if (@available(iOS 11.0, *)) {
             NEHotspotConfiguration* configuration = [[NEHotspotConfiguration alloc] initWithSSID:ssid];
-            configuration.joinOnce = true;
+            configuration.joinOnce = joinOnce;
+            configuration.lifeTimeInDays = lifeTimeInDays;
             
             [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
                 if (error != nil) {
@@ -45,11 +48,14 @@
     RCT_EXPORT_METHOD(connectSecure:(NSString*)ssid
                       withPassphrase:(NSString*)passphrase
                       isWEP:(BOOL)isWEP
+                      lifeTimeInDays:(nonnull NSNumber*)lifeTimeInDays
+                      joinOnce:(BOOL)joinOnce   
                       callback:(RCTResponseSenderBlock)callback) {
         
         if (@available(iOS 11.0, *)) {
             NEHotspotConfiguration* configuration = [[NEHotspotConfiguration alloc] initWithSSID:ssid passphrase:passphrase isWEP:isWEP];
-            configuration.joinOnce = true;
+            configuration.joinOnce = joinOnce;
+            configuration.lifeTimeInDays = lifeTimeInDays;
             
             [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
                 if (error != nil) {
