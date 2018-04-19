@@ -31,7 +31,7 @@
             
             [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
                 if (error != nil) {
-                    callback(@[@"Error while configuring WiFi"]);
+                    callback(@[[error localizedDescription]]);
                 } else {
                     callback(@[[NSNull null]]);
                 }
@@ -59,7 +59,7 @@
             
             [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
                 if (error != nil) {
-                    callback(@[@"Error while configuring WiFi"]);
+                    callback(@[[error localizedDescription]]);
                 } else {
                     callback(@[[NSNull null]]);
                 }

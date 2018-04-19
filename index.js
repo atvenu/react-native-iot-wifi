@@ -5,8 +5,8 @@ module.exports = NativeModules.IOTWifi;
 
 /**
  * isAvaliable(Callback callback)
- * connect(String ssid, Callback callback)
- * todo: connectSecure(String ssid, String passphrase, Boolean isWEP, Callback callback)
+ * connect(String ssid, int lifeTimeInDays, Boolean joinOnce, Callback callback)
+ * connectSecure(String ssid, String passphrase, Boolean isWEP, int lifeTimeInDays, Boolean joinOnce, Callback callback)
  * removeSSID(String ssid, Callback callback)
  * getSSID(Callback callback)
  * Android only: forceWifiUsage()
