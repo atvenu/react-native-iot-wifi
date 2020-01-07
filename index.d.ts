@@ -10,7 +10,7 @@ declare module 'react-native-iot-wifi' {
 
   type ConnectSecureArgs =
     | [string, (error: string) => void]
-    | [string, string, number, boolean, (error: string) => void];
+    | [string, string, boolean, number, boolean, (error: string) => void];
 
   export namespace RNWifi {
     function isApiAvailable(cb: (available: boolean) => void): void;

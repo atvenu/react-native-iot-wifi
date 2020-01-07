@@ -45,7 +45,6 @@
         
         if (@available(iOS 11.0, *)) {
             NEHotspotConfiguration* configuration = [[NEHotspotConfiguration alloc] initWithSSID:ssid passphrase:passphrase isWEP:isWEP];
-
             configuration.joinOnce = joinOnce;
             configuration.lifeTimeInDays = lifeTimeInDays;
             

@@ -52,7 +52,7 @@ module.exports = {
  * (un)bindNetwork only affects Android
  * isApiAvailable(Callback callback)
  * connect(String ssid, int lifeTimeInDays, Boolean joinOnce, Boolean bindNetwork = false, Callback callback)
- * connectSecure(String ssid, String passphrase, Boolean isWEP, int lifeTimeInDays, Boolean joinOnce, Boolean bindNetwork = false, Callback callback)
+ * connectSecure(String ssid, String passphrase, Boolean isWEP, int lifeTimeInDays, Boolean joinOnce, Callback callback)
  * removeSSID(String ssid, Boolean unbindNetwork = false, Callback callback)
  * getSSID(Callback callback)
  */
