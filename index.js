@@ -3,20 +3,20 @@
 import { NativeModules } from 'react-native';
 
 function connect(...args) {
-  if (args.length < 2 || args.length > 3) {
+  if (args.length < 2 || args.length > 4) {
     throw new TypeError('invalid arguments');
-  } else if (args.length === 2) {
-    NativeModules.IOTWifi.connect(args[0], false, args[1]);
+  } else if (args.length === 4) {
+    NativeModules.IOTWifi.connect(args[0], args[1], args[2], false, args[3]);
   } else {
     NativeModules.IOTWifi.connect(...args);
   }
 }
 
 function connectSecure(...args) {
-  if (args.length < 4 || args.length > 5) {
+  if (args.length < 4 || args.length > 6) {
     throw new TypeError('invalid arguments');
-  } else if (args.length === 4) {
-    NativeModules.IOTWifi.connectSecure(args[0], args[1], args[2], false, args[3]);
+  } else if (args.length === 6) {
+    NativeModules.IOTWifi.connectSecure(args[0], args[1], args[2], args[3], args[4], false, args[5]);
   } else {
     NativeModules.IOTWifi.connectSecure(...args);
   }
